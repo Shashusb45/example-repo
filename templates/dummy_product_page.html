@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .product-image {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+        }
+        .reviews {
+            margin-top: 20px;
+        }
+        .review {
+            background-color: #f9f9f9;
+            border-left: 5px solid #007bff;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <img src="{{ product.image_url }}" alt="{{ product.title }}" class="product-image">
+
+        <div class="reviews">
+            <h2>Customer Reviews:</h2>
+            {% for review in product.reviews %}
+                <div class="review">
+                    {{ review }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

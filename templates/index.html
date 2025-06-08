@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Analysis App</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+        
+        /* Container Styling */
+        .container {
+            text-align: center;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 40px 30px;
+            width: 350px;
+        }
+        
+        /* Title Styling */
+        h1 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        /* Button Styling */
+        .button {
+            display: block;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 5px;
+            padding: 12px 0;
+            margin: 12px auto;
+            width: 85%;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Logout Link Styling */
+        .logout {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 14px;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .logout:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ name }}</h1>
+        <h1>Review Analysis App</h1>
+        <a href="{{ url_for('review_analysis') }}" class="button">Review Analysis</a>
+        <a href="{{ url_for('review_analysis_multi_language') }}" class="button">Multi Language Review analysis</a>
+        <a href="{{ url_for('review_crawler') }}" class="button">Review Crawler</a>
+        <a href="{{ url_for('spam_detection') }}" class="button">Spam Detection</a>
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+</body>
+</html>
